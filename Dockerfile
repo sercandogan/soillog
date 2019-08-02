@@ -13,7 +13,6 @@ RUN export LC_ALL=C.UTF-8 && export LANG=C.UTF-8
 
 RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
-#RUN pip3 install -r requirements/dev.txt
-#COPY env.dist .env
+RUN pip3 install -r requirements.txt
 
 RUN ln -s /usr/bin/python3 /usr/bin/python && ln -s /usr/bin/pip3  /usr/bin/pip
