@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    restart: always
+    build: .
+    hostname: raspberrypi.local
+    ports:
+      - "1996:1996"
+    volumes:
+      - .:/app
+    command: tail -f /dev/null
