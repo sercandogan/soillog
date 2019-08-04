@@ -2,6 +2,7 @@ from src.constants import Pins
 import Adafruit_DHT
 from src.errors import Temp_Humidity_IOError
 
+
 class TempHumidity(object):
 
     def __init__(self):
@@ -16,5 +17,3 @@ class TempHumidity(object):
                 "humidity": humidity
             }
         raise Temp_Humidity_IOError()
-
-
