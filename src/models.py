@@ -1,8 +1,9 @@
 from peewee import *
 from datetime import datetime
+import os
 
-DBNAME = "data/sensordata-{0}.db".format(datetime.strftime(datetime.today(), "%Y-%m-%d"))
-db = SqliteDatabase(DBNAME)
+# db = SqliteDatabase(os.getenv("DB_NAME"))
+db = SqliteDatabase("sensordata.db")
 
 
 class BaseModel(Model):
