@@ -22,7 +22,7 @@ while True:
         data = {**temp_humidity_data, **moisture_data}
 
         writer = Writer(**data)
-        writer.save()§
+        writer.save()
     except Temp_Humidity_IOError:
         # @TODO: Add logger
         pass
