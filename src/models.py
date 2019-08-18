@@ -15,7 +15,10 @@ class Sensor(BaseModel):
     created_date = DateTimeField(default=datetime.now)
     temperature = FloatField()
     humidity = FloatField()
-    # moisture = FloatField()
+    moisture_1 = IntegerField()
+    moisture_1_voltage = FloatField()
+    moisture_2 = IntegerField()
+    moisture_2_voltage = FloatField()
 
 
 def create_tables():

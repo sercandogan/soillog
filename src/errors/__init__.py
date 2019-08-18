@@ -10,8 +10,11 @@ class Error(Exception):
         super(Exception, self).__init__({'message': message, 'code': code})
 
 
-
 class Temp_Humidity_IOError(Error):
     def __init__(self):
         Error.__init__(self, "Couldn't read temp and humidity value.", 500)
 
+
+class Moisture_IOError(Error):
+    def __init__(self):
+        Error.__init__(self, "Couldn't read moisture value.", 500)

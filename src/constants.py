@@ -7,3 +7,11 @@ class Pins(Enum):
 
     def __get__(self, instance, owner):
         return self.value
+
+
+class Channels(Enum):
+    MOISTURE_1 = os.getenv("CHANNEL_MOISTURE_1")
+    MOISTURE_2 = os.getenv("CHANNEL_MOISTURE_2")
+
+    def __get__(self, instance, owner):
+        return self.value

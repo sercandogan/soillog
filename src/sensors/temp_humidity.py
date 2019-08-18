@@ -1,12 +1,11 @@
-from src.constants import Pins
 import Adafruit_DHT
 from src.errors import Temp_Humidity_IOError
 
 
 class TempHumidity(object):
 
-    def __init__(self):
-        self.pin = Pins.TEMP_HUMIDITY
+    def __init__(self, pin):
+        self.pin = pin
         self.sensor = Adafruit_DHT.DHT22
 
     def get_temp_humidity(self):

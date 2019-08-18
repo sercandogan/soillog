@@ -8,8 +8,8 @@ RUN apt-get install -y \
     python3-minimal \
     python3-pip \
     vim \
-    sqlite3
-
+    sqlite3 \ #First download
+    screen
 
 RUN export LC_ALL=C.UTF-8 && export LANG=C.UTF-8
 
