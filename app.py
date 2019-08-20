@@ -36,4 +36,4 @@ while True:
         logging.error("Temperature & Humidity IO Error")
     except Moisture_IOError:
         logging.error("Moisture IO Error")
-    time.sleep(os.getenv("RETRY_FREQUENCY"))
+    time.sleep(int(os.getenv("RETRY_FREQUENCY")))
