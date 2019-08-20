@@ -6,6 +6,10 @@ from src.constants import Pins, Channels
 
 import time
 import os
+# Logging
+import logging
+
+logging.basicConfig(filename='example.log', level=logging.ERROR, format='%(asctime)s %(levelname)s %(message)s')
 
 temp_humidity = TempHumidity(Pins.TEMP_HUMIDITY)
 moisture_1 = Moisture(Channels.MOISTURE_1)
@@ -24,9 +28,7 @@ while True:
         writer = Writer(**data)
         writer.save()
     except Temp_Humidity_IOError:
-        # @TODO: Add logger
-        pass
+        logging.error("Temperature & Humidity IO Error")
     except Moisture_IOError:
-        # @TODO: Add Logger
-        pass
+        logging.error("Moisture IO Error")
     time.sleep(os.getenv("RETRY_FREQUENCY"))
