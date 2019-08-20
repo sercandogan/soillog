@@ -4,12 +4,17 @@ from src.errors import Temp_Humidity_IOError, Moisture_IOError
 from src.writer import Writer
 from src.constants import Pins, Channels
 
+# env
+from dotenv import load_dotenv, find_dotenv
+
 import time
 import os
 # Logging
 import logging
 
 logging.basicConfig(filename='example.log', level=logging.ERROR, format='%(asctime)s %(levelname)s %(message)s')
+
+load_dotenv(find_dotenv())
 
 temp_humidity = TempHumidity(Pins.TEMP_HUMIDITY)
 moisture_1 = Moisture(Channels.MOISTURE_1)

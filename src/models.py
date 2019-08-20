@@ -1,9 +1,10 @@
 from peewee import *
 from datetime import datetime
 import os
+from dotenv import load_dotenv, find_dotenv
 
-# db = SqliteDatabase(os.getenv("DB_NAME"))
-db = SqliteDatabase("sensordata.db")
+load_dotenv(find_dotenv())
+db = SqliteDatabase(os.getenv("DB_NAME"))
 
 
 class BaseModel(Model):

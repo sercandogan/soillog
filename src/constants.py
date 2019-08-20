@@ -1,5 +1,9 @@
 from enum import Enum
+from dotenv import load_dotenv, find_dotenv
+
 import os
+
+load_dotenv(find_dotenv())
 
 
 class Pins(Enum):
