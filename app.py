@@ -12,7 +12,7 @@ import os
 # Logging
 import logging
 
-logging.basicConfig(filename='example.log', level=logging.ERROR, format='%(asctime)s %(levelname)s %(message)s')
+logging.basicConfig(filename='soillog.log', level=logging.ERROR, format='%(asctime)s %(levelname)s %(message)s')
 
 load_dotenv(find_dotenv())
 
@@ -36,4 +36,9 @@ while True:
         logging.error("Temperature & Humidity IO Error")
     except Moisture_IOError:
         logging.error("Moisture IO Error")
+    except RuntimeError:
+        logging.critical("Run time error")
+    except Exception as msg:
+        logging.critical(msg)
+
     time.sleep(int(os.getenv("RETRY_FREQUENCY")))
