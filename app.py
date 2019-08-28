@@ -12,7 +12,7 @@ import os
 # Logging
 import logging
 
-logging.basicConfig(filename='soillog.log', level=logging.ERROR, format='%(asctime)s %(levelname)s %(message)s')
+logging.basicConfig(filename='logs/soillog.log', level=logging.ERROR, format='%(asctime)s %(levelname)s %(message)s')
 
 load_dotenv(find_dotenv())
 
